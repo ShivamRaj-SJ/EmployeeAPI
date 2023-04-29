@@ -28,6 +28,7 @@ public Iterable<EmpDetail> getAllDetail()
 	return emprepo.findAll();
 	
 }
+// This is Employee API
 @PostMapping("/save_user")
 public ResponseEntity<?> saveuserdata(@RequestBody EmpDetail empdetail)
 
