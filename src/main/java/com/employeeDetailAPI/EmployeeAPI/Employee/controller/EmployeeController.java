@@ -21,7 +21,7 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeRepository emprepo;
 	
-@GetMapping("/save_user")
+@GetMapping("/Employee/data")
 //public List<EmpDetail> getAllDetail()
 public Iterable<EmpDetail> getAllDetail()
 {
@@ -29,19 +29,19 @@ public Iterable<EmpDetail> getAllDetail()
 	
 }
 // This is Employee API
-@PostMapping("/save_user")
+@PostMapping("/Employee/data")
 public ResponseEntity<?> saveuserdata(@RequestBody EmpDetail empdetail)
 
 {
 	//return  EmployeeRepository //reponame.save(empdetail);
 return ResponseEntity.ok(emprepo.save(empdetail));
 }
-@PutMapping("/save_user/{id}")//for updating
+@PutMapping("/Employee/data/{id}")//for updating
 public void updateDetail(@PathVariable long id,@RequestBody EmpDetail detail)
 {
 	emprepo.save(detail);
 }
-@DeleteMapping("/save_user/{id}")
+@DeleteMapping("/Employee/data/{id}")
 public void deletedata(@PathVariable long id) {
 	emprepo.deleteById(id);
 }
